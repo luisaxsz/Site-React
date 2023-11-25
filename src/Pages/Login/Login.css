@@ -211,6 +211,7 @@ body {
   padding: 10px 40px;
   cursor: pointer;
   margin-bottom: 4.5rem;
+  text-decoration: none;
 }
 #signUpForm button {
   margin-top: 20px;
@@ -260,4 +261,8 @@ body {
 #signUp button:focus,
 #signIn button:focus {
   outline: none;
+}
+.login{
+  text-decoration: none;
+  color: #fff;
 }

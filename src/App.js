@@ -1,11 +1,10 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import React from 'react';
 import './App.css';
-import Login from './Pages/Login/Login.js';
-import Home from './Pages/Home/Home.js';
+import AppRoutes from './routes.js';
 
 function App() {
   return(
-    <Login />
+    <AppRoutes />
   )
 }
 

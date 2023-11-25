@@ -1,8 +1,11 @@
+import React from 'react';
 import './Home.css'
 
 function Home() {
     return(
-        <h1>Home</h1>
+        <div class="gradient">
+            <h1>Home</h1>
+        </div>
     )
 }
 export default Home;

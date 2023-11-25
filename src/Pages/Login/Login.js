@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import './Login.css';
 
 function Login(){
-    const [ismoveSliderRight, setismoveSliderRight] = useState(false);
+  const [ismoveSliderRight, setismoveSliderRight] = useState(true);
   const moveSliderRight = () => {
     setismoveSliderRight(true); 
     };
@@ -15,7 +16,7 @@ function Login(){
     <div class="gradient">
       <div class="container">
         <div id="signInSignUpBox">
-          <div id="overlay" className={ismoveSliderRight ? 'overlay-moveHalfRight':'overlay-moveHalfLeft'}>
+          <div id="overlay" className={ismoveSliderRight ? 'overlay-moveHalfRight':'overlay-moveHalfLeft' }>
             <div id="overlayInner" className={ismoveSliderRight ? 'overlayInner-moveHalfLeft':'overlayInner-moveHalfRight'}>
               <div id="signUp">
                 <h1>Olá!</h1>
@@ -36,7 +37,7 @@ function Login(){
                 <input type="email" placeholder="Email"/><br/>
                 <input type="password" placeholder='Senha'/>
                 <p>Esqueceu sua senha?</p>
-                <button>Login</button>
+                <button><Link to="/home" class="login">Login</Link></button>
               </div>
             </div>
             <div id="signUpForm" className={ismoveSliderRight ? 'shiftLeft' : ''}>
