@@ -1,8 +1,6 @@
 package ApiReact.Usuario;
 
-import org.springframework.beans.InvalidPropertyException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -22,7 +20,7 @@ public class UsuarioService {
         return usersRep.findAll();
     }
 
-    public boolean getUserByLogin(LoginAuth loginAuth) throws CredentialException {
+    public boolean getUserByLogin(UsuarioDTO loginAuth) throws CredentialException {
         Optional<Usuario> usuarioOptional = usersRep.findByEmail(loginAuth.getEmail());
         if (!isValidEmail(loginAuth.getEmail())) throw new IllegalArgumentException("Email Inválido");
 

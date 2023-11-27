@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.security.auth.login.CredentialException;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -26,7 +25,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> userAuth(@RequestBody LoginAuth loginAuth) throws CredentialException {
+    public ResponseEntity<?> userAuth(@RequestBody UsuarioDTO loginAuth) throws CredentialException {
         return ResponseEntity.ok(usersService.getUserByLogin(loginAuth));
     }
 
