@@ -36,13 +36,12 @@ public class UsuarioService {
     public Usuario insert(Usuario usuario) {
         Optional<Usuario> emailUser = usersRep.findByEmail(usuario.getEmail());
         Assert.isNull(usuario.getId(), "Não foi possível inserir usuario");
-        if (emailUser.isPresent() && !isValidEmail(usuario.getEmail())) {
-            throw new RuntimeException("Email Inválido");
-        } else {
+        if (!emailUser.isPresent() && isValidEmail(usuario.getEmail())) {
             String senhaCrip = passwordEncoder.encode(usuario.getSenha());
             usuario.setSenha(senhaCrip);
-            usersRep.save(usuario);
             return usersRep.save(usuario);
+        } else {
+            throw new RuntimeException("Email Inválido ou já cadastrado");
         }
     }
 
